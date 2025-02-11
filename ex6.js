@@ -2,7 +2,7 @@
 function all (arr){
     for (let i = 0 ; i<arr.length;i++){
         if(arr[i]<=0){
-            return false
+            return arr[i]
         }
     }
     return true
