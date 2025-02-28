@@ -11,3 +11,11 @@ function find (score){
     return filter
 }
 console.log(find([1,2,3,4,5,567,73,44,23,2,35,]))
+
+const scores = [1, 2, 3, 4, 5, 567, 73, 44, 23, 2, 35];
+
+const findScoresBelow10 = (scores) => {
+  return scores.filter((score) => score < 10);
+};
+
+console.log("نمرات زیر ۱۰:", findScoresBelow10(scores)); // خروجی: [1, 2, 3, 4, 5, 2]
