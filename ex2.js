@@ -19,3 +19,9 @@ const findScoresBelow10 = (scores) => {
 };
 
 console.log("نمرات زیر ۱۰:", findScoresBelow10(scores)); // خروجی: [1, 2, 3, 4, 5, 2]
+//. فیلتر کردن اعداد بین دو مقدار
+const findBetween = (scores, min, max) => {
+    return scores.filter((score) => score >= min && score <= max);
+  };
+  
+  console.log(findBetween([5, 12, 8, 3, 20], 10, 20)); // خروجی: [12, 20]
