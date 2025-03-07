@@ -33,3 +33,15 @@ const findBetween = (scores, min, max) => {
   };
   
   console.log(findLongStrings(["hello", "world", "javascript", "code"])); // خروجی: ["javascript"]
+  //فیلتر کردن اشیاء با خاصیت مشخص
+  const findAdults = (users) => {
+    return users.filter((user) => user.age > 18);
+  };
+  
+  const users = [
+    { name: "عرشیا", age: 25 },
+    { name: "علی", age: 17 },
+    { name: "مریم", age: 20 },
+  ];
+  
+  console.log(findAdults(users)); // خروجی: [{ name: "عرشیا", age: 25 }, { name: "مریم", age: 20 }]
