@@ -39,3 +39,12 @@ const calculateAdjustedAverage = (scores) => {
   console.log("میانگین نمرات ۱:", calculateAdjustedAverage(scores1)); // خروجی: 15.5
   console.log("میانگین نمرات ۲:", calculateAdjustedAverage(scores2)); // خروجی: 13.75
   console.log("میانگین نمرات ۳:", calculateAdjustedAverage(scores3)); // خروجی: 20
+
+  // محاسبه میانگین اعداد بزرگ‌تر از یک حد مشخص
+  const averageAboveThreshold = (nums, threshold) => {
+    const filteredNums = nums.filter((num) => num > threshold);
+    const sum = filteredNums.reduce((acc, num) => acc + num, 0);
+    return sum / filteredNums.length;
+  };
+  
+  console.log(averageAboveThreshold([1, 2, 3, 4, 5.1], 2)); // خروجی: 4.033...
