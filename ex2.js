@@ -25,3 +25,11 @@ const findBetween = (scores, min, max) => {
   };
   
   console.log(findBetween([5, 12, 8, 3, 20], 10, 20)); // خروجی: [12, 20]
+
+  // فیلتر کردن رشته‌های با طول بیشتر از ۵ کاراکتر
+
+  const findLongStrings = (strings) => {
+    return strings.filter((str) => str.length > 5);
+  };
+  
+  console.log(findLongStrings(["hello", "world", "javascript", "code"])); // خروجی: ["javascript"]
