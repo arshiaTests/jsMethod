@@ -13,3 +13,9 @@ const lvlUpp = (array) => {
   };
   
   console.log("نمرات افزایش یافته:", lvlUpp([1, 2, 3, 4, 5, 6, 7, 8])); // خروجی: [6, 7, 8, 9, 10, 11, 12, 13]
+
+//تابعی بنویسید که فقط اعداد کوچک‌تر از ۱۰ را ۵ واحد افزایش دهد.
+const conditionalIncrease=(array)=>{
+    return array.map((num) => (num <10 ? num +10 : num));
+}
+console.log(conditionalIncrease([5, 10, 15, 8])); // خروجی: [10, 10, 15, 13]
