@@ -19,3 +19,16 @@ const conditionalIncrease=(array)=>{
     return array.map((num) => (num <10 ? num +10 : num));
 }
 console.log(conditionalIncrease([5, 10, 15, 8])); // خروجی: [10, 10, 15, 13]
+//تابعی بنویسید که اعداد را به حروف تبدیل کند (مثلاً A, B, C).
+
+let convertToGrades = (array)=> {
+    return array.map((num)=>{
+        if (num >= 90) return "A";
+    if (num >= 80) return "B";
+    if (num >= 70) return "C";
+    if (num >= 60) return "D";
+    return "F";  
+    });
+};
+console.log(convertToGrades([95, 85, 75, 65, 55])); // خروجی: ["A", "B", "C", "D", "F"]
+
