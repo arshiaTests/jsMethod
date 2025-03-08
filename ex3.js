@@ -32,3 +32,12 @@ let convertToGrades = (array)=> {
 };
 console.log(convertToGrades([95, 85, 75, 65, 55])); // خروجی: ["A", "B", "C", "D", "F"]
 
+//افزایش اعداد با استفاده از reduce
+const lvlUpWithReduce = (array) => {
+    return array.reduce((acc, num) => {
+      acc.push(num + 5);
+      return acc;
+    }, []);
+  };
+  
+  console.log(lvlUpWithReduce([1, 2, 3, 4, 5])); // خروجی: [6, 7, 8, 9, 10]
