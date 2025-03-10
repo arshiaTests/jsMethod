@@ -24,3 +24,12 @@ const allPositiveNumbers = (arr) => {
   };
   
   console.log("آیا همه کاربران بالای ۱۸ سال هستند؟", allAdults(users)); // خروجی: false
+
+  //بررسی اینکه آیا همه‌ی رشته‌ها با حرف بزرگ شروع می‌شوند
+
+  const allStartWithUppercase = (arr) => {
+    return arr.every((str) => str[0] === str[0].toUpperCase());
+  };
+  
+  console.log(allStartWithUppercase(["Hello", "World", "JavaScript"])); // خروجی: true
+  console.log(allStartWithUppercase(["Hello", "world", "JavaScript"])); // خروجی: false
