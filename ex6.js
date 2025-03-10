@@ -14,7 +14,7 @@ const allPositiveNumbers = (arr) => {
 
   // بررسی اینکه همه‌ی کاربران بالای ۱۸ سال هستند
   const users = [
-    { name: "آرشیا", age: 25 },
+    { name: "عرشیا", age: 25 },
     { name: "علی", age: 17 },
     { name: "مریم", age: 20 },
   ];
