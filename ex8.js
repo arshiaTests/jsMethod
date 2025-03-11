@@ -16,3 +16,12 @@ const mergeAndSort = (arr1, arr2) => {
   };
   
   console.log(mergeAndSort([10, 2], [5, 8])); // خروجی: [2, 5, 8, 10]
+
+  //ادغام آرایه‌ها و محاسبه مجموع
+
+  const mergeAndSum = (arr1, arr2) => {
+    const mergedArray = [...arr1, ...arr2];
+    return mergedArray.reduce((acc, num) => acc + num, 0);
+  };
+  
+  console.log(mergeAndSum([1, 2], [3, 4])); // خروجی: 10
