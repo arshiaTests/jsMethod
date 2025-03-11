@@ -2,7 +2,6 @@
 function include (arr,target){
     return arr.includes(target) ? `${target} در آرایه وجود دارد.` :"پیدا نشد "
     
-
 }
 console.log(include([10,20,34,2,233],20))
 
@@ -25,3 +24,12 @@ const findLastNumberIndex = (arr, target) => {
   };
   
   console.log(findAllNumberIndices([10, 20, 34, 20, 233], 20)); // خروجی: "20 در آرایه وجود دارد و موقعیت‌های آن 1, 3 هستند."
+
+  //بررسی وجود یک رشته در آرایه
+  const includeString = (arr, target) => {
+    return arr.includes(target) ? `${target} در آرایه وجود دارد.` : "پیدا نشد";
+  };
+  
+  console.log(includeString(["apple", "banana", "orange"], "banana")); // خروجی: "banana در آرایه وجود دارد."
+  console.log(includeString(["apple", "banana", "orange"], "grape")); // خروجی: "پیدا نشد"
+  
