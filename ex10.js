@@ -21,4 +21,18 @@ function removeDuplicates(arr) {
   };
   
   console.log(removeDuplicatesPreserveOrder([1, 2, 2, 3, 4, 4, 5])); // خروجی: [1, 2, 3, 4, 5]
+
+  //حذف تکراری‌ها با حفظ ترتیب
+  const removeDuplicatesPreserveOrderr = (arr) => {
+    const seen = new Set();
+    return arr.filter((num) => {
+      if (!seen.has(num)) {
+        seen.add(num);
+        return true;
+      }
+      return false;
+    });
+  };
+  
+  console.log(removeDuplicatesPreserveOrderr([1, 2, 2, 3, 4, 4, 5])); // خروجی: [1, 2, 3, 4, 5]
   
