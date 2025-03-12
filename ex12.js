@@ -37,3 +37,24 @@ const secondSmallest = (arr) => {
   console.log(secondSmallest([10, 20, 5, 8, 30])); // 8
   console.log(secondSmallest([3, 7, 3, 7, 9])); // 7
   console.log(secondSmallest([5, 5, 5])); // "عدد دوم کوچک‌تر وجود ندارد"
+
+// پیدا کردن سومین عدد بزرگ‌تر:
+const thirdLargest = (arr) => {
+  if (arr.length < 3) return "عدد سوم بزرگ‌تر وجود ندارد";
+
+  let max1 = Math.max(...arr);
+  let filteredArr1 = arr.filter((num) => num !== max1);
+
+  if (filteredArr1.length === 0) return "عدد سوم بزرگ‌تر وجود ندارد";
+
+  let max2 = Math.max(...filteredArr1);
+  let filteredArr2 = filteredArr1.filter((num) => num !== max2);
+
+  if (filteredArr2.length === 0) return "عدد سوم بزرگ‌تر وجود ندارد";
+
+  let max3 = Math.max(...filteredArr2);
+  return max3;
+};
+
+console.log(thirdLargest([10, 20, 5, 8, 30])); // خروجی: 10
+console.log(thirdLargest([3, 7, 3, 7, 9])); // خروجی: 3
