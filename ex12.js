@@ -58,3 +58,12 @@ const thirdLargest = (arr) => {
 
 console.log(thirdLargest([10, 20, 5, 8, 30])); // خروجی: 10
 console.log(thirdLargest([3, 7, 3, 7, 9])); // خروجی: 3
+
+// پیدا کردن کوچک‌ترین عدد:
+const findSmallest = (arr) => {
+  if (arr.length === 0) return "آرایه خالی است";
+  return Math.min(...arr);
+};
+
+console.log(findSmallest([10, 20, 5, 8, 30])); // خروجی: 5
+console.log(findSmallest([3, 7, 3, 7, 9])); // خروجی: 3
