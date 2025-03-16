@@ -4,15 +4,15 @@
 //const scores = [15, 18, 12, 20, 10, 14, 16];
 
 //با استفاده از reduce، میانگین این نمرات را محاسبه کن.
-function average (num){
-    let sum = 0;
-    for (let i = 0 ;i<num.length ; i++){
-        sum+= num[i]
-    }
-    return sum / num.length
-}
-console.log(average([1,2,3,4,5,1]))
 
+function x (num){
+  let sum = 0;
+  for( let i = 0 ; i<num.length; i++){
+    sum += num[i]
+  }
+  return `میانگین: ${sum/num.length}`
+}
+console.log(x([1,2,3,45,5]))
 
 
 const calculateAdjustedAverage = (scores) => {
