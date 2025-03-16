@@ -14,6 +14,12 @@ function x (num){
 }
 console.log(x([1,2,3,45,5]))
 
+function easyWay(num){
+  const sum = num.reduce((acc,num) => acc + num, 0);
+  const average = sum/num.length;
+  return `میانگین : ${average.toFixed(2)}`
+}
+console.log(easyWay([1,2,3,4,5,6,6]))
 
 const calculateAdjustedAverage = (scores) => {
     // 1. حذف نمرات صفر
