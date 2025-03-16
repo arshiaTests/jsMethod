@@ -55,7 +55,8 @@ const calculateAdjustedAverage = (scores) => {
   
   console.log(averageAboveThreshold([1, 2, 3, 4, 5.1], 2)); // خروجی: 4.033...
 
-  //محاسبه میانگین وزنی
+
+  ////محاسبه میانگین وزنی
   const weightedAverage = (nums, weights) => {
     const totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
     const weightedSum = nums.reduce((acc, num, index) => acc + num * weights[index], 0);
