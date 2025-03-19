@@ -16,3 +16,9 @@ console.log(capitalizeFirstLetter("hello")); // Hello
 
 const capitalizeFirstLetterr = str => str[0].toUpperCase() + str.slice(1);
 console.log(capitalizeFirstLetterr("hello")); // Hello
+
+//تمرین 4: تبدیل هر کلمه در یک رشته به حروف بزرگ
+
+const texttt = "hello world";
+const capitalizedText = texttt.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+console.log(capitalizedText); // Hello World
