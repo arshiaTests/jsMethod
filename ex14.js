@@ -28,3 +28,20 @@ const isAllUpperCase = str => str === str.toUpperCase();
 console.log(isAllUpperCase("HELLO")); // true
 console.log(isAllUpperCase("Hello")); // false
 
+//تمرین 6: جایگزینی حروف بزرگ با حروف کوچک و برعکس
+
+const swapCase = str => 
+    str.split('')
+       .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
+       .join('');
+
+console.log(swapCase("Hello World")); // hELLO wORLD
+
+//تمرین 7: تبدیل حروف بزرگ به کوچک و کوچک به بزرگ در یک رشته
+
+const textttt = "Hello World";
+const swappedText = textttt.split('').map(char => {
+    return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+}).join('');
+console.log(swappedText); // hELLO wORLD
+
