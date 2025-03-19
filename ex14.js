@@ -22,3 +22,9 @@ console.log(capitalizeFirstLetterr("hello")); // Hello
 const texttt = "hello world";
 const capitalizedText = texttt.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 console.log(capitalizedText); // Hello World
+
+//تمرین 5: بررسی اینکه آیا یک رشته تماماً از حروف بزرگ تشکیل شده است
+const isAllUpperCase = str => str === str.toUpperCase();
+console.log(isAllUpperCase("HELLO")); // true
+console.log(isAllUpperCase("Hello")); // false
+
