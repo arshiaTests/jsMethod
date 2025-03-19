@@ -6,3 +6,8 @@ console.log(upperText);
 const textt = "HELLO"
 const lower = textt.toLocaleLowerCase();
 console.log(lower)
+
+//تمرین 2: بررسی اینکه آیا یک رشته با حروف بزرگ شروع می‌شود
+
+const capitalizeFirstLetter = str => str[0].toUpperCase() + str.slice(1);
+console.log(capitalizeFirstLetter("hello")); // Hello
