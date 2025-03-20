@@ -41,3 +41,10 @@ const namessss = ["ali", "sara", "reza"];
 const upperCaseNamesss = namessss.map(name => name.toUpperCase());
 const reversedNames = upperCaseNamesss.map(name => name.split('').reverse().join(''));
 console.log(reversedNames); // ['ILA', 'ARAS', 'AZER']
+
+//تمرین 5: فیلتر کردن اسامی با طول کمتر از ۴ و اضافه کردن علامت تعجب
+
+const namesssss= ["ali", "sara", "reza", "mahmoud"];
+const shortNames = namesssss.filter(name => name.length < 4);
+const excitedNames = shortNames.map(name => `${name}!`);
+console.log(excitedNames); // ['ali!', 'reza!']
