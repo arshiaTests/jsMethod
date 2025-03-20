@@ -21,3 +21,9 @@ const indexedNames = upperCaseNames.map((name, index) => `${index + 1} - ${name}
 
 console.log(indexedNames);
 
+//تمرین 2: تبدیل اسامی به حروف کوچک و اضافه کردن طول آن‌ها
+
+const namesss = ["ALI", "SARA", "REZA"];
+const lowerCaseNames = namesss.map(name => name.toLowerCase());
+const namesWithLength = lowerCaseNames.map(name => `${name} (${name.length})`);
+console.log(namesWithLength); // ['ali (3)', 'sara (4)', 'reza (4)']
