@@ -35,3 +35,9 @@ const evenNumbers = numbers.filter(num => num % 2 === 0);
 const squaredNumbers = evenNumbers.map(num => num * num);
 console.log(squaredNumbers); // [4, 16, 36]
 
+//تمرین 4: تبدیل اسامی به حروف بزرگ و معکوس کردن آن‌ها
+
+const namessss = ["ali", "sara", "reza"];
+const upperCaseNamesss = namessss.map(name => name.toUpperCase());
+const reversedNames = upperCaseNamesss.map(name => name.split('').reverse().join(''));
+console.log(reversedNames); // ['ILA', 'ARAS', 'AZER']
