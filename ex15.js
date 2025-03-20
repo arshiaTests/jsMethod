@@ -27,3 +27,11 @@ const namesss = ["ALI", "SARA", "REZA"];
 const lowerCaseNames = namesss.map(name => name.toLowerCase());
 const namesWithLength = lowerCaseNames.map(name => `${name} (${name.length})`);
 console.log(namesWithLength); // ['ali (3)', 'sara (4)', 'reza (4)']
+
+//تمرین 3: فیلتر کردن اعداد زوج و محاسبه مربع آن‌ها
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+const squaredNumbers = evenNumbers.map(num => num * num);
+console.log(squaredNumbers); // [4, 16, 36]
+
