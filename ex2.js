@@ -45,3 +45,32 @@ const findBetween = (scores, min, max) => {
   ];
   
   console.log(findAdults(users)); // خروجی: [{ name: "عرشیا", age: 25 }, { name: "مریم", age: 20 }]
+
+  //تمرین ترکیبی: فیلتر کردن و تحلیل داده‌ها
+
+  const analyzeStudents = (students) => {
+    // 1. فیلتر کردن دانش‌آموزان بالای ۱۸ سال
+    const adults = students.filter((student) => student.age > 18);
+  
+    // 2. فیلتر کردن نمرات زیر ۱۰
+    const lowScorers = adults.filter((student) => student.score < 10);
+  
+    // 3. محاسبه میانگین سنی
+    const totalAge = lowScorers.reduce((acc, student) => acc + student.age, 0);
+    const averageAge = totalAge / lowScorers.length;
+  
+    // 4. برگرداندن نتیجه نهایی
+    return `میانگین سنی دانش‌آموزان با نمره زیر ۱۰: ${averageAge.toFixed(2)}، تعداد: ${lowScorers.length}`;
+  };
+  
+  // تست تابع
+  const students = [
+    { name: "عرشیا", age: 25, score: 8 },
+    { name: "علی", age: 17, score: 12 },
+    { name: "مریم", age: 20, score: 5 },
+    { name: "زهرا", age: 22, score: 15 },
+    { name: "محمد", age: 19, score: 9 },
+  ];
+  
+  console.log(analyzeStudents(students)); 
+  // خروجی: "میانگین سنی دانش‌آموزان با نمره زیر ۱۰: 21.33، تعداد: 3"
