@@ -64,3 +64,28 @@ const calculateAdjustedAverage = (scores) => {
   };
   
   console.log(weightedAverage([1, 2, 3, 4], [1, 2, 3, 4])); // خروجی: 3
+
+
+  //تمرین ترکیبی: محاسبه میانگین نمرات با شرایط خاص
+
+
+  const calculateWeightedAverage = (scores) => {
+    // 1. حذف نمرات صفر
+    const filteredScores = scores.filter((score) => score !== 0);
+  
+    // 2. افزودن نمره اضافی اگر تعداد نمرات کمتر از ۵ باشد
+    if (filteredScores.length < 5) {
+      filteredScores.push(10);
+    }
+  
+    // 3. محاسبه میانگین وزنی
+    const totalWeight = filteredScores.reduce((acc, _, index) => acc + (index + 1), 0);
+    const weightedSum = filteredScores.reduce((acc, score, index) => acc + score * (index + 1), 0);
+  
+    // 4. برگرداندن نتیجه با دو رقم اعشار
+    return (weightedSum / totalWeight).toFixed(2);
+  };
+  
+  // تست تابع
+  const scores = [15, 18, 0, 20, 10, 14, 16];
+  console.log(calculateWeightedAverage(scores)); // خروجی: 15.67
