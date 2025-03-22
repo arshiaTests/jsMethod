@@ -47,3 +47,33 @@ const findAllIndices = (arr, target) => {
   };
   
   console.log(findAllIndicess([10, 20, 34, 20, 233], 20)); // خروجی: "ایندکس‌ها: 1, 3"
+
+  //تمرین ترکیبی: جستجو و تحلیل ایندکس‌ها
+
+  const analyzeIndices = (arr, target) => {
+    // 1. پیدا کردن اولین ایندکس عدد
+    const firstIndex = arr.findIndex((num) => num === target);
+  
+    // 2. پیدا کردن آخرین ایندکس عدد
+    const lastIndex = arr.lastIndexOf(target);
+  
+    // 3. پیدا کردن همه ایندکس‌های عدد
+    const allIndices = [];
+    arr.forEach((num, i) => {
+      if (num === target) allIndices.push(i);
+    });
+  
+    // 4. برگرداندن نتیجه نهایی
+    return `اولین ایندکس عدد ${target}: ${firstIndex !== -1 ? firstIndex : "پیدا نشد"}
+  آخرین ایندکس عدد ${target}: ${lastIndex !== -1 ? lastIndex : "پیدا نشد"}
+  همه ایندکس‌های عدد ${target}: ${allIndices.length > 0 ? allIndices.join(", ") : "پیدا نشد"}`;
+  };
+  
+  // تست تابع
+  const numbers = [10, 20, 34, 20, 233, 20];
+  
+  console.log(analyzeIndices(numbers, 20)); 
+  // خروجی: 
+  // "اولین ایندکس عدد 20: 1
+  // آخرین ایندکس عدد 20: 5
+  // همه ایندکس‌های عدد 20: 1, 3, 5"
