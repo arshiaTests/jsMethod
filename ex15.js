@@ -48,3 +48,7 @@ const namesssss= ["ali", "sara", "reza", "mahmoud"];
 const shortNames = namesssss.filter(name => name.length < 4);
 const excitedNames = shortNames.map(name => `${name}!`);
 console.log(excitedNames); // ['ali!', 'reza!']
+
+
+//تمرین ترکیبی: تحلیل و تبدیل اسامی
+
