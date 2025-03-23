@@ -45,3 +45,47 @@ const swappedText = textttt.split('').map(char => {
 }).join('');
 console.log(swappedText); // hELLO wORLD
 
+//تمرین ترکیبی: تحلیل و تبدیل رشته‌ها
+
+const analyzeText = (str) => {
+    // 1. تبدیل رشته به حروف بزرگ
+    const upperText = str.toUpperCase();
+  
+    // 2. تبدیل رشته به حروف کوچک
+    const lowerText = str.toLowerCase();
+  
+    // 3. تبدیل اولین حرف هر کلمه به حروف بزرگ
+    const capitalizedText = str
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ");
+  
+    // 4. بررسی اینکه آیا رشته تماماً از حروف بزرگ تشکیل شده است
+    const isAllUpper = str === str.toUpperCase();
+  
+    // 5. جایگزینی حروف بزرگ با حروف کوچک و برعکس
+    const swappedText = str
+      .split("")
+      .map((char) =>
+        char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+      )
+      .join("");
+  
+    // 6. برگرداندن نتیجه نهایی
+    return `رشته به حروف بزرگ: ${upperText}
+  رشته به حروف کوچک: ${lowerText}
+  رشته با اولین حرف هر کلمه بزرگ: ${capitalizedText}
+  آیا رشته تماماً از حروف بزرگ تشکیل شده است؟ ${isAllUpper}
+  رشته با جایگزینی حروف بزرگ و کوچک: ${swappedText}`;
+  };
+  
+  // تست تابع
+  const texttttt = "Hello World";
+  
+  console.log(analyzeText(texttttt)); 
+  // خروجی: 
+  // "رشته به حروف بزرگ: HELLO WORLD
+  // رشته به حروف کوچک: hello world
+  // رشته با اولین حرف هر کلمه بزرگ: Hello World
+  // آیا رشته تماماً از حروف بزرگ تشکیل شده است؟ false
+  // رشته با جایگزینی حروف بزرگ و کوچک: hELLO wORLD"
