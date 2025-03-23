@@ -18,3 +18,6 @@ console.log(doubledEvens); // خروجی: [4, 8, 12]
 const num = [1,2,3,4,5,6,7]
 const even = num.filter((nums)=> nums % 2 === 0)
 console.log(even)
+
+//تمرین ترکیبی: تبدیل و فیلتر کردن داده‌ها
+
