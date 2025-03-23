@@ -67,3 +67,6 @@ const findSmallest = (arr) => {
 
 console.log(findSmallest([10, 20, 5, 8, 30])); // خروجی: 5
 console.log(findSmallest([3, 7, 3, 7, 9])); // خروجی: 3
+
+//تمرین ترکیبی: تحلیل و پیدا کردن اعداد خاص در آرایه
+
