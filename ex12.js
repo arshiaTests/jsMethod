@@ -70,3 +70,38 @@ console.log(findSmallest([3, 7, 3, 7, 9])); // خروجی: 3
 
 //تمرین ترکیبی: تحلیل و پیدا کردن اعداد خاص در آرایه
 
+const analyzeNumbers = (arr) => {
+  if (arr.length < 2) return "آرایه باید حداقل دو عدد داشته باشد.";
+
+  // 1. پیدا کردن بزرگ‌ترین عدد
+  const max = Math.max(...arr);
+
+  // 2. پیدا کردن دومین بزرگ‌ترین عدد
+  const filteredArrMax = arr.filter((num) => num !== max);
+  const secondMax =
+    filteredArrMax.length > 0 ? Math.max(...filteredArrMax) : "وجود ندارد";
+
+  // 3. پیدا کردن کوچک‌ترین عدد
+  const min = Math.min(...arr);
+
+  // 4. پیدا کردن دومین کوچک‌ترین عدد
+  const filteredArrMin = arr.filter((num) => num !== min);
+  const secondMin =
+    filteredArrMin.length > 0 ? Math.min(...filteredArrMin) : "وجود ندارد";
+
+  // 5. برگرداندن نتیجه نهایی
+  return `بزرگ‌ترین عدد: ${max}
+دومین بزرگ‌ترین عدد: ${secondMax}
+کوچک‌ترین عدد: ${min}
+دومین کوچک‌ترین عدد: ${secondMin}`;
+};
+
+// تست تابع
+const numbers = [10, 20, 5, 8, 30];
+
+console.log(analyzeNumbers(numbers)); 
+// خروجی: 
+// "بزرگ‌ترین عدد: 30
+// دومین بزرگ‌ترین عدد: 20
+// کوچک‌ترین عدد: 5
+// دومین کوچک‌ترین عدد: 8"
