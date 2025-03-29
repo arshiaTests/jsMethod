@@ -74,3 +74,4 @@ const findBetween = (scores, min, max) => {
   
   console.log(analyzeStudents(students)); 
   // خروجی: "میانگین سنی دانش‌آموزان با نمره زیر ۱۰: 21.33، تعداد: 3"
+
