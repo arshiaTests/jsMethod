@@ -89,3 +89,7 @@ const calculateAdjustedAverage = (scores) => {
   // تست تابع
   const scores = [15, 18, 0, 20, 10, 14, 16];
   console.log(calculateWeightedAverage(scores)); // خروجی: 15.67
+
+  //ریفکتور
+
+  
