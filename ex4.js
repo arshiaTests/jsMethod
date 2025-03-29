@@ -66,3 +66,6 @@ const findFirstNumberGreaterThan15 = (arr) => {
   
   console.log(analyzeStudents(students)); 
   // خروجی: "اولین دانش‌آموز با نمره بالای ۱۵: عرشیا، میانگین نمرات دانش‌آموزان بالای ۲۰ سال: 16.50، تعداد: 2"
+
+  //refacor
+  

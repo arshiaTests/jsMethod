@@ -76,4 +76,139 @@ const lvlUpWithReduce = (array) => {
   // خروجی: "میانگین نمرات A و B: 90.00، تعداد: 5"
 
   //refactor
+  /**
+ * افزایش نمرات به میزان ۵ واحد
+ * @param {number[]} grades - آرایه نمرات اولیه
+ * @returns {number[]} نمرات افزایش یافته
+ */
+function boostGrades(grades) {
+  return grades.map(grade => grade + 5);
+}
+
+console.log('نمرات افزایش یافته:', boostGrades([1, 2, 3, 4, 5, 6, 7, 8]));
+// خروجی: [6, 7, 8, 9, 10, 11, 12, 13]
+
+/**
+ * افزایش انتخابی نمرات (فقط نمرات زیر ۱۰)
+ * @param {number[]} marks - آرایه نمرات
+ * @param {number} [bonus=10] - مقدار افزایش
+ * @returns {object} نتیجه با جزئیات
+ */
+function selectivelyBoostGrades(marks, bonus = 10) {
+  const boosted = marks.map(mark => mark < 10 ? mark + bonus : mark);
+  
+  return {
+    original: marks,
+    boosted: boosted,
+    message: `تعداد نمرات افزایش یافته: ${marks.filter(m => m < 10).length}`
+  };
+}
+
+console.log(selectivelyBoostGrades([5, 10, 15, 8]));
+/* خروجی:
+{
+  original: [5, 10, 15, 8],
+  boosted: [15, 10, 15, 18],
+  message: "تعداد نمرات افزایش یافته: 2"
+}
+*/
+
+/**
+ * تبدیل نمرات عددی به حروف
+ * @param {number[]} scores - آرایه نمرات
+ * @returns {string[]} نمرات حروفی
+ */
+function convertToLetterGrades(scores) {
+  return scores.map(score => {
+    if (score >= 90) return 'A+';
+    if (score >= 85) return 'A';
+    if (score >= 80) return 'B+';
+    if (score >= 75) return 'B';
+    if (score >= 70) return 'C+';
+    if (score >= 65) return 'C';
+    if (score >= 60) return 'D';
+    return 'F';
+  });
+}
+
+console.log('نمرات حروفی:', convertToLetterGrades([95, 85, 75, 65, 55]));
+// خروجی: ["A+", "A", "B", "C", "F"]
+
+/**
+ * افزایش نمرات با استفاده از reduce
+ * @param {number[]} numbers - آرایه اعداد
+ * @param {number} [increment=5] - مقدار افزایش
+ * @returns {string} نتیجه فرمت شده
+ */
+function incrementWithReduce(numbers, increment = 5) {
+  const result = numbers.reduce((acc, num) => {
+    acc.push(num + increment);
+    return acc;
+  }, []);
+  
+  return `اعداد افزایش یافته: ${result.join(' | ')}`;
+}
+
+console.log(incrementWithReduce([1, 2, 3, 4, 5]));
+// خروجی: "اعداد افزایش یافته: 6 | 7 | 8 | 9 | 10"
+
+/**
+ * تحلیل جامع نمرات
+ * @param {number[]} testScores - آرایه نمرات
+ * @returns {object} گزارش تحلیلی
+ */
+function generateGradeAnalysisReport(testScores) {
+  // افزایش نمرات
+  const adjustedScores = testScores.map(score => score + 5);
+  
+  // تبدیل به حروف
+  const letterGrades = adjustedScores.map(score => {
+    if (score >= 90) return 'A';
+    if (score >= 80) return 'B';
+    if (score >= 70) return 'C';
+    if (score >= 60) return 'D';
+    return 'F';
+  });
+  
+  // فیلتر نمرات عالی
+  const excellentScores = adjustedScores.filter(
+    (score, index) => ['A', 'B'].includes(letterGrades[index])
+  );
+  
+  // محاسبات آماری
+  const stats = {
+    totalStudents: testScores.length,
+    excellentCount: excellentScores.length,
+    averageScore: excellentScores.reduce((sum, score) => sum + score, 0) / excellentScores.length || 0,
+    gradeDistribution: letterGrades.reduce((acc, grade) => {
+      acc[grade] = (acc[grade] || 0) + 1;
+      return acc;
+    }, {})
+  };
+  
+  return {
+    adjustedScores,
+    letterGrades,
+    excellentScores,
+    statistics: stats,
+    summary: `تعداد نمرات عالی: ${stats.excellentCount} - میانگین: ${stats.averageScore.toFixed(2)}`
+  };
+}
+
+const sampleScores = [85, 92, 78, 88, 95, 65, 70];
+console.log('گزارش تحلیل نمرات:', generateGradeAnalysisReport(sampleScores));
+/* خروجی:
+{
+  adjustedScores: [90, 97, 83, 93, 100, 70, 75],
+  letterGrades: ["A", "A", "B", "A", "A", "C", "C"],
+  excellentScores: [90, 97, 83, 93, 100],
+  statistics: {
+    totalStudents: 7,
+    excellentCount: 5,
+    averageScore: 92.6,
+    gradeDistribution: {A: 4, B: 1, C: 2}
+  },
+  summary: "تعداد نمرات عالی: 5 - میانگین: 92.60"
+}
+*/
   
