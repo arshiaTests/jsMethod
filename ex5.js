@@ -80,4 +80,5 @@ console.log(analyzeNumbers(numberssss));
 //   { value: 4, isEven: true },
 //   { value: 6, isEven: true },
 //   { value: 8, isEven: true },
-//   { value: 10, isEven: true
+//   { value: 10, isEven: true},
+// refactor 
