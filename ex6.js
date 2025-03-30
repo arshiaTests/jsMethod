@@ -73,3 +73,149 @@ const allPositiveNumbers = (arr) => {
   // نام دانش‌آموزان به حروف بزرگ: ["عرشیا", "علی", "مریم", "زهرا", "محمد"]"
 
   //refactor
+
+  /**
+ * بررسی مثبت بودن تمام اعداد آرایه
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {object} نتیجه بررسی با جزئیات
+ */
+function checkAllPositiveNumbers(numbers) {
+  const isAllPositive = numbers.every(num => num > 0);
+  const negativeNumbers = numbers.filter(num => num <= 0);
+  
+  return {
+    status: isAllPositive,
+    message: isAllPositive 
+      ? "تمام اعداد مثبت هستند" 
+      : `اعداد منفی/صفر یافت شد: ${negativeNumbers.join(', ')}`,
+    negativeCount: negativeNumbers.length
+  };
+}
+
+console.log('بررسی اعداد مثبت:', checkAllPositiveNumbers([1, 2, 3, -4, 5]));
+// خروجی: {status: false, message: "اعداد منفی/صفر یافت شد: -4", negativeCount: 1}
+
+/**
+ * بررسی زوج بودن تمام اعداد
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {object} نتیجه بررسی با جزئیات
+ */
+function verifyAllEvenNumbers(numbers) {
+  const allEven = numbers.every(num => num % 2 === 0);
+  const oddNumbers = numbers.filter(num => num % 2 !== 0);
+  
+  return {
+    allEven,
+    oddNumbers,
+    summary: allEven
+      ? "تمام اعداد زوج هستند"
+      : `اعداد فرد یافت شد: ${oddNumbers.join(', ')}`
+  };
+}
+
+console.log('بررسی اعداد زوج:', verifyAllEvenNumbers([2, 4, 6, 7]));
+// خروجی: {allEven: false, oddNumbers: [7], summary: "اعداد فرد یافت شد: 7"}
+
+/**
+ * بررسی سن کاربران
+ * @param {object[]} users - آرایه کاربران
+ * @param {number} minAge - حداقل سن مورد نظر
+ * @returns {object} نتیجه بررسی
+ */
+function validateUsersAge(users, minAge = 18) {
+  const allAboveMinAge = users.every(user => user.age >= minAge);
+  const underageUsers = users.filter(user => user.age < minAge);
+  
+  return {
+    allAdult: allAboveMinAge,
+    underageCount: underageUsers.length,
+    underageNames: underageUsers.map(user => user.name),
+    message: allAboveMinAge
+      ? `تمام کاربران بالای ${minAge} سال هستند`
+      : `${underageUsers.length} کاربر زیر ${minAge} سال وجود دارد`
+  };
+}
+
+const userList = [
+  { name: "عرشیا", age: 25 },
+  { name: "علی", age: 17 },
+  { name: "مریم", age: 20 },
+];
+
+console.log('بررسی سن کاربران:', validateUsersAge(userList));
+// خروجی: {allAdult: false, underageCount: 1, underageNames: ["علی"], message: "1 کاربر زیر 18 سال وجود دارد"}
+
+/**
+ * بررسی حروف اول رشته‌ها
+ * @param {string[]} strings - آرایه رشته‌ها
+ * @returns {object} نتیجه بررسی
+ */
+function checkUppercaseStart(strings) {
+  const allUppercase = strings.every(str => str[0] === str[0].toUpperCase());
+  const invalidStrings = strings.filter(str => str[0] !== str[0].toUpperCase());
+  
+  return {
+    allValid: allUppercase,
+    invalidCount: invalidStrings.length,
+    invalidExamples: invalidStrings.slice(0, 3), // نمایش حداکثر 3 مورد
+    warning: allUppercase 
+      ? null 
+      : "بعضی رشته‌ها با حرف کوچک شروع شده‌اند"
+  };
+}
+
+console.log('بررسی حروف اول:', checkUppercaseStart(["Hello", "world", "JavaScript"]));
+// خروجی: {allValid: false, invalidCount: 1, invalidExamples: ["world"], warning: "بعضی رشته‌ها با حرف کوچک شروع شده‌اند"}
+
+/**
+ * تحلیل جامع دانشجویان
+ * @param {object[]} studentList - لیست دانشجویان
+ * @returns {object} گزارش تحلیلی
+ */
+function generateStudentAnalysisReport(studentList) {
+  // بررسی سن
+  const ageValidation = validateUsersAge(studentList, 18);
+  
+  // بررسی نمرات
+  const highScorers = studentList.filter(student => student.score > 20);
+  const lowScorers = studentList.filter(student => student.score < 10);
+  
+  // تبدیل نام‌ها
+  const formattedNames = studentList.map(student => ({
+    original: student.name,
+    uppercase: student.name.toUpperCase(),
+    firstLetter: student.name[0].toUpperCase()
+  }));
+  
+  // آمار
+  const stats = {
+    total: studentList.length,
+    averageScore: studentList.reduce((sum, student) => sum + student.score, 0) / studentList.length,
+    highScoreCount: highScorers.length,
+    lowScoreCount: lowScorers.length
+  };
+  
+  return {
+    ageValidation,
+    scoreAnalysis: {
+      hasHighScorer: highScorers.length > 0,
+      highScorers,
+      lowScorers
+    },
+    names: formattedNames,
+    statistics: stats,
+    summary: `تعداد دانشجویان: ${stats.total} | 
+             میانگین نمرات: ${stats.averageScore.toFixed(1)} | 
+             دانشجویان با نمره عالی: ${stats.highScoreCount}`
+  };
+}
+
+const studentData = [
+  { name: "عرشیا", age: 25, score: 18 },
+  { name: "علی", age: 17, score: 12 },
+  { name: "مریم", age: 20, score: 5 },
+  { name: "زهرا", age: 22, score: 15 },
+  { name: "محمد", age: 19, score: 9 },
+];
+
+console.log('گزارش تحلیلی دانشجویان:', generateStudentAnalysisReport(studentData));
