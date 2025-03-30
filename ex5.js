@@ -82,3 +82,105 @@ console.log(analyzeNumbers(numberssss));
 //   { value: 8, isEven: true },
 //   { value: 10, isEven: true},
 // refactor 
+/**
+ * بررسی وجود اعداد منفی در آرایه
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {boolean} آیا عدد منفی وجود دارد؟
+ */
+function containsNegativeNumbers(numbers) {
+  return numbers.some(num => num < 0);
+}
+
+console.log('آیا آرایه شامل عدد منفی است؟', containsNegativeNumbers([1, 2, -3, 4, 5])); // true
+console.log('آیا آرایه شامل عدد منفی است؟', containsNegativeNumbers([1, 2, 3, 4, 5])); // false
+
+/**
+ * تبدیل اعداد به رشته‌های توصیفی
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {string[]} آرایه رشته‌های فرمت شده
+ */
+function formatNumbersAsStrings(numbers) {
+  return numbers.map(num => `عدد: ${num}`);
+}
+
+console.log('اعداد فرمت شده:', formatNumbersAsStrings([1, 2, 3])); 
+// ["عدد: 1", "عدد: 2", "عدد: 3"]
+
+/**
+ * فیلتر و تبدیل اعداد زوج
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {number[]} آرایه اعداد زوج دوبرابر شده
+ */
+function getDoubledEvenNumbers(numbers) {
+  return numbers
+    .filter(num => num % 2 === 0)
+    .map(num => num * 2);
+}
+
+console.log('اعداد زوج دوبرابر شده:', getDoubledEvenNumbers([1, 2, 3, 4, 5])); // [4, 8]
+
+/**
+ * تبدیل اعداد به اشیاء با مشخصات
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {object[]} آرایه اشیاء عددی
+ */
+function convertToNumberObjects(numbers) {
+  return numbers.map(num => ({
+    value: num,
+    isEven: num % 2 === 0,
+    isPositive: num > 0
+  }));
+}
+
+console.log('اشیا عددی:', convertToNumberObjects([1, 2, 3, 4, -5]));
+/* خروجی:
+[
+  {value: 1, isEven: false, isPositive: true},
+  {value: 2, isEven: true, isPositive: true},
+  {value: 3, isEven: false, isPositive: true},
+  {value: 4, isEven: true, isPositive: true},
+  {value: -5, isEven: false, isPositive: false}
+]
+*/
+
+/**
+ * تحلیل جامع اعداد
+ * @param {number[]} numbers - آرایه اعداد
+ * @returns {object} گزارش تحلیلی
+ */
+function analyzeNumberArray(numbers) {
+  const negatives = numbers.filter(num => num < 0);
+  const evens = numbers.filter(num => num % 2 === 0);
+  const odds = numbers.filter(num => num % 2 !== 0);
+  
+  return {
+    count: numbers.length,
+    hasNegatives: negatives.length > 0,
+    negativeCount: negatives.length,
+    evenCount: evens.length,
+    oddCount: odds.length,
+    sumOfEvens: evens.reduce((sum, num) => sum + num, 0),
+    sumOfOdds: odds.reduce((sum, num) => sum + num, 0),
+    numberObjects: convertToNumberObjects(numbers),
+    summary: `تعداد اعداد: ${numbers.length} | 
+             اعداد منفی: ${negatives.length} | 
+             اعداد زوج: ${evens.length} | 
+             مجموع اعداد زوج: ${evens.reduce((sum, num) => sum + num, 0)}`
+  };
+}
+
+const sampleNumbers = [1, 2, 3, 4, 5, -6, 7, 8, -9, 10];
+console.log('گزارش تحلیل اعداد:', analyzeNumberArray(sampleNumbers));
+/* خروجی:
+{
+  count: 10,
+  hasNegatives: true,
+  negativeCount: 2,
+  evenCount: 4,
+  oddCount: 6,
+  sumOfEvens: 14,
+  sumOfOdds: 7,
+  numberObjects: [...],
+  summary: "تعداد اعداد: 10 | اعداد منفی: 2 | اعداد زوج: 4 | مجموع اعداد زوج: 14"
+}
+*/
