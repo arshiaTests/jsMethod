@@ -143,7 +143,7 @@ const userList = [
 console.log('مرتب‌سازی کاربران بر اساس سن (صعودی):', 
   sortObjectsByProperty(userList, 'age'));
 /* خروجی:
-[
+/[
   { name: "علی", age: 17 },
   { name: "مریم", age: 20 },
   { name: "عرشیا", age: 25 }
