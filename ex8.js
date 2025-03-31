@@ -184,5 +184,5 @@ console.log('گزارش تحلیلی:', analyzeMergedArrays(sampleArray1, sample
     max: 10
   },
   summary: "تعداد کل عناصر: 7 | عناصر منحصربفرد: 5 | مجموع: 28 | کوچکترین مقدار: 2 | بزرگترین مقدار: 10"
-}
+}/
 */
