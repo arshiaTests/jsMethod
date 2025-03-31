@@ -231,5 +231,5 @@ console.log('گزارش تحلیلی:', analyzeDataComprehensively(sampleNumbers
     
   تحلیل رشته 'ban':
     - 'ban' در 1 موقعیت یافت شد"
-}
+}/
 */
