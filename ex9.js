@@ -66,3 +66,6 @@ const findLastNumberIndex = (arr, target) => {
   // آخرین موقعیت عدد 20: 3
   // همه موقعیت‌های عدد 20: 1, 3
   // رشته 'banana' در آرایه وجود دارد."
+
+  //refactor
+  
