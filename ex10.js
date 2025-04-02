@@ -144,4 +144,6 @@ function analyzeArrayContents(arr) {
 // Test with sample data
 const sampleData = [1, 2, 2, 3, 4, 4, 5, 1, 6, 7, 7, undefined, null];
 console.log('Array analysis:', analyzeArrayContents(sampleData));
+// finish num 10 refactor 
+
   
