@@ -105,7 +105,7 @@ console.log('Order-preserving duplicate removal:',
 // Output: [1, 2, 3, 4, 5]
 
 /**
- * Comprehensive array analysis with duplicate removal
+ * /Comprehensive array analysis with duplicate removal
  * @param {Array} arr - Input array to analyze
  * @returns {Object} Analysis report with multiple metrics
  */
