@@ -77,4 +77,4 @@ const findAllIndices = (arr, target) => {
   // "اولین ایندکس عدد 20: 1
   // آخرین ایندکس عدد 20: 5
   // همه ایندکس‌های عدد 20: 1, 3, 5"
-  //refactor
+  ///refactor
