@@ -75,7 +75,7 @@ const findAllIndices = (arr, target) => {
   console.log(analyzeIndices(numbers, 20)); 
   //// خروجی: 
   /// "اولین ایندکس عدد 20: 1
-  // آخرین ایندکس عدد 20: 5
+  /// آخرین ایندکس عدد 20: 5
   // همه ایندکس‌های عدد 20: 1, 3, 5"
   ////refactor
   /**
