@@ -100,7 +100,7 @@ const analyzeNumbers = (arr) => {
 const numbers = [10, 20, 5, 8, 30];
 
 console.log(analyzeNumbers(numbers)); 
-// خروجی: 
+/// خروجی: 
 // "بزرگ‌ترین عدد: 30
 // دومین بزرگ‌ترین عدد: 20
 // کوچک‌ترین عدد: 5
