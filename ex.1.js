@@ -13,7 +13,7 @@ function x (num){
   return `میانگین: ${sum/num.length}`
 }
 console.log(x([1,2,3,45,5]))
-// TO FIx نشان میدهد تا چند رقم اعشار را بتواند برگرداند 
+// TO FIX نشان میدهد تا چند رقم اعشار را بتواند برگرداند 
 function easyWay(num){
   const sum = num.reduce((acc,num) => acc + num, 0);
   const average = sum/num.length;
