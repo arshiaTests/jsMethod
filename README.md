@@ -30,4 +30,6 @@
 
 متد‌ some در جاوا اسکریپت
 
+متد find در javascript
+
 
