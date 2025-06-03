@@ -32,4 +32,6 @@
 
 متد find در javascript
 
+متد find در javascript
+
 
