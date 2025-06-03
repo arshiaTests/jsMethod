@@ -32,6 +32,6 @@
 
 متد find در javascript
 
-متد find در javascript
+متد map در javascript
 
 
