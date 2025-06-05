@@ -34,5 +34,6 @@
 
 متد map در javascript
 
-متد Reduce در 
+متد Reduce در جاوا 
+
 
