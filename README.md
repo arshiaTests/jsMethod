@@ -34,4 +34,6 @@
 
 متد map در javascript
 
+متد 
+
 
